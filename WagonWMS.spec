@@ -5,6 +5,7 @@ from PyInstaller.utils.hooks import collect_data_files
 
 datas = [
     ("tmh.png", "."),
+    ("tmxico.ico", "."),
 ]
 datas += collect_data_files("reportlab")
 
@@ -43,5 +44,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,
+    icon="tmxico.ico",
 )
