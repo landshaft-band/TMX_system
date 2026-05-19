@@ -144,13 +144,29 @@ class DashboardPage(QWidget):
                 border = "#bca968"
 
             card = QFrame()
-            card.setStyleSheet(f"background: {color}; border: 1px solid {border}; border-radius: 3px;")
+            card.setObjectName("WarehouseZoneCard")
+            card.setStyleSheet(
+                f"""
+                QFrame#WarehouseZoneCard {{
+                    background: {color};
+                    border: 1px solid {border};
+                    border-radius: 3px;
+                }}
+                QFrame#WarehouseZoneCard QLabel {{
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                }}
+                """
+            )
             card_layout = QVBoxLayout(card)
             card_layout.setContentsMargins(8, 6, 8, 6)
             zone_title = QLabel(f"{zone['zone']} — {zone['name']}")
-            zone_title.setStyleSheet("font-weight: 800;")
+            zone_title.setStyleSheet("background: transparent; border: none; padding: 0; font-weight: 800;")
             load = QLabel(f"Загрузка: {zone['load']}%")
+            load.setStyleSheet("background: transparent; border: none; padding: 0;")
             status = QLabel(zone["status"])
+            status.setStyleSheet("background: transparent; border: none; padding: 0;")
             card_layout.addWidget(zone_title)
             card_layout.addWidget(load)
             card_layout.addWidget(status)

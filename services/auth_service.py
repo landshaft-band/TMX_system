@@ -3,9 +3,10 @@ from data import mock_data
 
 ROLE_PERMISSIONS = {
     "Приёмщик": {"dashboard:view", "receiving:view", "receiving:accept", "reports:discrepancy", "reports:batch"},
-    "Менеджер": {"dashboard:view", "orders:view", "orders:create", "shipping:view", "shipping:form", "shipping:close", "reports:view"},
-    "Логист": {"dashboard:view", "shipping:view", "logistics:view", "logistics:calculate", "reports:view"},
-    "Руководитель": {"dashboard:view", "receiving:view", "shipping:view", "orders:view", "logistics:view", "reports:view", "users:view"},
+    "Кладовщик": {"dashboard:view", "receiving:view", "receiving:accept", "reports:discrepancy", "reports:batch"},
+    "Менеджер": {"dashboard:view", "orders:view", "orders:create", "shipping:view", "shipping:form", "shipping:close", "reports:view", "integrations:view"},
+    "Логист": {"dashboard:view", "shipping:view", "logistics:view", "logistics:calculate", "reports:view", "integrations:view"},
+    "Руководитель": {"dashboard:view", "receiving:view", "shipping:view", "orders:view", "logistics:view", "reports:view", "users:view", "integrations:view"},
     "Администратор": {"*"},
 }
 
